@@ -8,6 +8,18 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
 {
     public class QueryOverStrategy
     {
+        public static void Errado(int id)
+        {
+            using (var session = ConfigurationNHiberante.CreateSession())
+            {
+              
+                var query = session.QueryOver<Pessoa>()
+                    .Where(pessoa => pessoa.Id == id);
+                Console.WriteLine(query.List().First());
+            }
+        }
+
+        
         public static void Batch(int id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())

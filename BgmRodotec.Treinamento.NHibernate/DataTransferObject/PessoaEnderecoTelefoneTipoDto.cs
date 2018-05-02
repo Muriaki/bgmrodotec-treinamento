@@ -1,17 +1,14 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Text;
-using FluentNHibernate.Data;
 
-namespace BgmRodotec.Treinamento.NHibernate.Models
+namespace BgmRodotec.Treinamento.NHibernate.DataTransferObject
 {
-    public class Pessoa : Entity
+    public class PessoaEnderecoTelefoneTipoDto
     {
-        public virtual string Nome { get; set; }
-        
-        public virtual ISet<Telefone> Telefones { get; set; }
-        public virtual ISet<Endereco> Enderecos { get; set; }
-        public virtual ISet<Carro> Carros { get; set; }
+        public string Nome { get; set; }
+        public string Rua { get; set; }
+        public string Tipo { get; set; }
+        public string Numero { get; set; }
         
         public override string ToString() 
         {

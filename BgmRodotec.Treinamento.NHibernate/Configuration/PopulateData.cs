@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BgmRodotec.Treinamento.NHibernate.Models;
 
 namespace BgmRodotec.Treinamento.NHibernate.Configuration
@@ -18,8 +19,20 @@ namespace BgmRodotec.Treinamento.NHibernate.Configuration
 
                 session.Save(fixo);
                 session.Save(movel);
+                
+                var carroList = new HashSet<Carro>();                
+                for (var i = 1; i <= 10; i++)
+                {
+                    var carro = new Carro()
+                    {
+                        Modelo = "Modelo - " + i
+                    };
 
-                for (var i = 1; i <= 20; i++)
+                    session.Save(carro);
+                    carroList.Add(carro);
+                }
+                
+                for (var i = 1; i <= 10; i++)
                 {
                     var pessoa = new Pessoa()
                     {
@@ -52,7 +65,18 @@ namespace BgmRodotec.Treinamento.NHibernate.Configuration
                         };
                         listEndereco.Add(endereco);
                     }
+                    
+                    var randomCarroList = new HashSet<Carro>();
+                    var rdmInsert = random.Next(1, 5);                    
+                    for (var j = 1; j <= rdmInsert; j++)
+                    {
+                        var rdmCarro = random.Next(1, 10);
+                        randomCarroList.Add(carroList.FirstOrDefault(x => x.Id == rdmCarro));
+                    }
+
+                    pessoa.Carros = randomCarroList;
                     session.Save(pessoa);
+                    
                     foreach (var endereco in listEndereco)
                     {
                         session.Save(endereco);

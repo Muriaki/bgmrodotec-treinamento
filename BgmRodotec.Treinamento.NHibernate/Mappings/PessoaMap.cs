@@ -13,6 +13,8 @@ namespace BgmRodotec.Treinamento.NHibernate.Mappings
             
             HasMany(x => x.Telefones).Cascade.All().LazyLoad().Inverse().KeyColumn("Id_Pessoa");
             HasMany(x => x.Enderecos).Cascade.All().LazyLoad().Inverse().KeyColumn("Id_Pessoa");
+            
+            HasManyToMany(x => x.Carros).Cascade.All().LazyLoad().Table("PessoaCarro");
         }
     }
 }
