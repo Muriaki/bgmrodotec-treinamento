@@ -9,7 +9,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
 {
     public class AutoMapperStrategy
     {
-        public static void PessoaEnderecoTelefoneTipo(int id)
+        public static void PessoaEnderecoTelefoneTipo(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {
@@ -33,7 +33,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
             }
         }
         
-        public static void PessoaWithCollectionsSet(int id)
+        public static void PessoaWithCollectionsSet(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {
@@ -45,7 +45,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
             }
         }
         
-        public static void PessoaWithManyToManySet(int id)
+        public static void PessoaWithManyToManySet(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {

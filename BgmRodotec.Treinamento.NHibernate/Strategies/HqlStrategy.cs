@@ -8,21 +8,20 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
 {
     public class HqlStrategy
     {
-        public static void Errado(int id)
+        public static void LazyLoad(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {
                 //Prepara a query
                 var query = session.CreateQuery("from Pessoa p where p.Id = :id")
                     .SetParameter("id", id);
-               
                 
                 Console.WriteLine(query.List().First());
             }
         }
 
         
-        public static void Batch(int id)
+        public static void Batch(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {
@@ -52,7 +51,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
             }
         }
 
-        public static void EagerLoad(int id)
+        public static void EagerLoad(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {

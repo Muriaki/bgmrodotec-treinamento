@@ -36,6 +36,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Configuration
             var schemaExport = new SchemaExport(config);
             schemaExport.Drop(false, true);
             schemaExport.Create(false, true);
+                        
         }
     }
 }

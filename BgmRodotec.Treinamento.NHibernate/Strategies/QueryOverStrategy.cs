@@ -8,7 +8,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
 {
     public class QueryOverStrategy
     {
-        public static void Errado(int id)
+        public static void LazyLoad(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {
@@ -20,7 +20,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
         }
 
         
-        public static void Batch(int id)
+        public static void Batch(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {
@@ -45,7 +45,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Strategies
             }
         }
 
-        public static void EagerLoad(int id)
+        public static void EagerLoad(long id)
         {
             using (var session = ConfigurationNHiberante.CreateSession())
             {

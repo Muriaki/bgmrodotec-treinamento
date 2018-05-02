@@ -11,7 +11,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Mappings
             Id(x => x.Id).GeneratedBy.Identity();
             Map(x => x.Rua);
             
-            References(x => x.Pessoa).Column("Id_Pessoa").Cascade.All().Not.LazyLoad();
+            References(x => x.Pessoa).Column("Id_Pessoa").Cascade.All()/*.Fetch.Join()*/.Not.LazyLoad();
         }
     }
 }
