@@ -20,23 +20,23 @@ namespace BgmRodotec.Treinamento.NHibernate
                     Console.WriteLine("Escolha a estratrégia: ");
                     Console.WriteLine("Linq");
                     Console.WriteLine("1 - Batch");
-                    Console.WriteLine("2 - Eager (Funciona apenas com Collection do tipo ISet)");
-                    Console.WriteLine("3 - Sem performance\n");
+                    Console.WriteLine("2 - Eager Load (Funciona apenas com Collection do tipo ISet)");
+                    Console.WriteLine("3 - Lazy Load\n");
 
                     Console.WriteLine("QueryOver");
                     Console.WriteLine("4 - Batch");
-                    Console.WriteLine("5 - Eager (Funciona apenas com Collection do tipo ISet)");
-                    Console.WriteLine("6 - Sem performance\n");
+                    Console.WriteLine("5 - Eager Load (Funciona apenas com Collection do tipo ISet)");
+                    Console.WriteLine("6 - Lazy Load\n");
 
                     Console.WriteLine("Hql");
                     Console.WriteLine("7 - Batch");
-                    Console.WriteLine("8 - Eager (Funciona apenas com Collection do tipo ISet)");
-                    Console.WriteLine("9 - Sem performance\n");
+                    Console.WriteLine("8 - Eager Load (Funciona apenas com Collection do tipo ISet)");
+                    Console.WriteLine("9 - Lazy Load\n");
                     
                     Console.WriteLine("Criteria (Estratégias Fetch no mapeamento funcionam nesse caso)");
                     Console.WriteLine("10 - Batch");
-                    Console.WriteLine("11 - Eager (Funciona apenas com Collection do tipo ISet)");
-                    Console.WriteLine("12 - Sem performance\n");
+                    Console.WriteLine("11 - Eager Load (Funciona apenas com Collection do tipo ISet)");
+                    Console.WriteLine("12 - Lazy Load\n");
 
                     Console.WriteLine("AutoMapper");
                     Console.WriteLine("13 - Mapper para Nome, Rua, Numero, Tipo");
