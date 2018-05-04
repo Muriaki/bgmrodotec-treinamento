@@ -1,4 +1,5 @@
-﻿using FluentNHibernate.Cfg;
+﻿using BgmRodotec.Treinamento.NHibernate.Mappings;
+using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
@@ -26,7 +27,7 @@ namespace BgmRodotec.Treinamento.NHibernate.Configuration
                         .Password("bgm123"))
                     .ShowSql()
                     .FormatSql())
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Program>())
+                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<PessoaMap>())
                 .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();
         }

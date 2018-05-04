@@ -45,7 +45,9 @@ namespace BgmRodotec.Treinamento.NHibernate
                     Console.WriteLine("16 - Mapper para 1 listas Many to Many\n");
                     
                     Console.WriteLine("Extra");
-                    Console.WriteLine("17 - Get in Session\n");
+                    Console.WriteLine("17 - Get in Session");
+                    Console.WriteLine("18 - Paginação com relacionamento one to many usando query over");
+                    Console.WriteLine("19 - Paginação com relacionamento one to many usando linq\n");
 
 
                     var result = Console.ReadLine();
@@ -106,7 +108,13 @@ namespace BgmRodotec.Treinamento.NHibernate
                                 AutoMapperStrategy.PessoaWithManyToManySet(id);
                                 break;
                             case 17:
-                                ExtrasStrategy.SessionGet(id);
+                                ExtraStrategy.SessionGet(id);
+                                break;
+                            case 18:
+                                ExtraStrategy.PaginationWithQueryOverWithCollectionEagerFetch();
+                                break;
+                            case 19:
+                                ExtraStrategy.PaginationWithLinqWithCollectionEagerFetch();
                                 break;
                             default:
                                 Console.WriteLine("Nenhuma opção selecionada");
