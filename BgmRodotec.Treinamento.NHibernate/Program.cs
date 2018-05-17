@@ -127,7 +127,7 @@ namespace BgmRodotec.Treinamento.NHibernate
                     }
 
                     Console.WriteLine("Tecle qualquer tecla para continuar...");
-                    Console.ReadKey();
+                    Console.ReadLine();
                     Console.Clear();
                 }
             }
